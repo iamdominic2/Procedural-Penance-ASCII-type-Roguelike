@@ -4,6 +4,8 @@
 Playable link:
 https://iamdominic2.itch.io/ascii-type-roguelike-procedural-penance
 
+In the code, a lot of things occurs in Map&PC, Text, and Enemies.
+
 1. Tile-based movement and turn-based combat.
 2. You'll have to restart the game if you die.
 It can feel unfair at first, but that's because you lack knowledge and experience.The game pushes you in the direction of growing as a player, rather than grinding until you win like a traditional RPG. If you stick with it, you'll find that it's a very rewarding gameplay experience.
