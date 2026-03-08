@@ -64,7 +64,11 @@ Dragon (35-40F): Floor-wide fire breath
 God (40F): Final boss
 
 5408 blocks
+
 Updates:
+
 v1.1: Added "Swap" command when on top of item for better convenience when the inventory is full
+
 v1.2: Made equipped items have E symbol, made inventory displayed at all times instead of only when open, fixed 1 typo
-v1.3: Can now scroll text with P/L or mouse wheel
+
+v1.3: Can now scroll text with P/L or mouse wheel & Now start facing down
