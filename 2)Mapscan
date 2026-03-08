@@ -1,6 +1,8 @@
+//The thing that scans the pasted things or lines to generate map
+
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
-WhenBroadcastReceived(ScanMap)
+WhenBroadcastReceived(ScanMap) //Activates scanning
 {
     List.DeleteAll(map);
     Call Scan;
@@ -9,7 +11,7 @@ WhenBroadcastReceived(ScanMap)
 
 //----- Custom blocks -------------------------------------------------------------------------------------------------
 
-Define Scan (warp=true)
+Define Scan (warp=true) //Prints down walls, coridors, and empty space
 {
     Looks.Show();
     Motion.GoToXY(-238, 178);
