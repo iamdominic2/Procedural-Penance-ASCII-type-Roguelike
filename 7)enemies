@@ -1,3 +1,5 @@
+//The core of the enemy movement and attack and generation.
+
 //----- Green flag events ---------------------------------------------------------------------------------------------
 
 WhenGreenFlagClicked()
@@ -20,17 +22,17 @@ WhenGreenFlagClicked()
 
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
-WhenBroadcastReceived(Advance)
+WhenBroadcastReceived(Advance) //Generate enemies
 {
     Call Mon Gen;
 }
 
-WhenBroadcastReceived(EnemyMovement)
+WhenBroadcastReceived(EnemyMovement) //Enemies' turn
 {
     Call Move Enemies;
 }
-
-WhenBroadcastReceived(Monster)
+ 
+WhenBroadcastReceived(Monster) //Generate 1 monster
 {
     If (Not (((floor == 26) Or (floor == 40))))
     {
@@ -38,7 +40,7 @@ WhenBroadcastReceived(Monster)
     }
 }
 
-WhenBroadcastReceived(StartGame)
+WhenBroadcastReceived(StartGame) //Generate enemies
 {
     Call Mon Gen;
 }
@@ -46,7 +48,7 @@ WhenBroadcastReceived(StartGame)
 
 //----- Custom blocks -------------------------------------------------------------------------------------------------
 
-Define 1tilespecials (warp=true)
+Define 1tilespecials (warp=true) //Adjacent monsters' special abiltiies. Most explain itself through the text log.
 {
     If (monstermaploc[counter7] == "B")
     {
@@ -389,7 +391,7 @@ Define Attack or move (warp=false)
     }
 }
 
-Define CheckD(string loc) (warp=false)
+Define CheckD(string loc) (warp=false) //Check direction of alignment
 {
     counter1 = 0;
     Repeat (8)
@@ -409,7 +411,7 @@ Define CheckD(string loc) (warp=false)
     }
 }
 
-Define Generate 1 Mon(string t) (warp=true)
+Define Generate 1 Mon(string t) (warp=true) //New monster spawns
 {
     counter4 = 0;
     Repeat Until (((Operator.LetterOf(maps[floor], counter4) == 2) And (Not ((monsterhp[counter4] > "")))) And (Not ((counter4 == Playerloc))))
@@ -421,7 +423,7 @@ Define Generate 1 Mon(string t) (warp=true)
     List.ReplaceItem(Monstercondition, counter4, "");
 }
 
-Define Mon Gen (warp=true)
+Define Mon Gen (warp=true) //Generate a list of monsters while erasing the old ones.
 {
     List.DeleteAll(monstermaploc);
     List.DeleteAll(monsterhp);
@@ -438,7 +440,7 @@ Define Mon Gen (warp=true)
     }
 }
 
-Define Move Enemies (warp=true)
+Define Move Enemies (warp=true) //Monsters move around
 {
     counter6 = 1;
     List.DeleteAll(monstergoaltiles);
@@ -453,14 +455,14 @@ Define Move Enemies (warp=true)
         counterx = (floor(((counter6 / 40) - 0.00001)) + 1);
         countery = ((counter6 % 40) + 1);
         counter7 = counter6;
-        If ((Monstercondition[counter7] > 999) And (Not ((Operator.Round(Operator.Join(Operator.Join(Operator.LetterOf(Monstercondition[counter7], 4), Operator.LetterOf(Monstercondition[counter7], 5)), Operator.LetterOf(Monstercondition[counter7], 6))) == monsterhp[counter7]))))
+        If ((Monstercondition[counter7] > 999) And (Not ((Operator.Round(Operator.Join(Operator.Join(Operator.LetterOf(Monstercondition[counter7], 4), Operator.LetterOf(Monstercondition[counter7], 5)), Operator.LetterOf(Monstercondition[counter7], 6))) == monsterhp[counter7])))) 
         {
             List.Add(textlog, Operator.Join(MonsterNames[List.IndexOf(al, monstermaploc[counter7])], " recovered from paralysis!"));
             List.ReplaceItem(Monstercondition, counter7, "");
         }
         If ((monstermaploc[counter7] > "") And (Not ((monstergoaltiles[counter7] == "!"))))
         {
-            Repeat ((((monstermaploc[counter7] == "H") Or (monstermaploc[counter7] == "R")) + 1))
+            Repeat ((((monstermaploc[counter7] == "H") Or (monstermaploc[counter7] == "R")) + 1)) //Double speed monsters
             {
                 If (monsterhp[counter7] > 0)
                 {
@@ -468,7 +470,7 @@ Define Move Enemies (warp=true)
                     {
                         If (Monstercondition[counter7] < 200)
                         {
-                            If ((Monstercondition[counter7] < 100) And (Operator.Random(1 , (5 * monsterspecials[List.IndexOf(al, monstermaploc[counter7])])) == 1))
+                            If ((Monstercondition[counter7] < 100) And (Operator.Random(1 , (5 * monsterspecials[List.IndexOf(al, monstermaploc[counter7])])) == 1)) //Monsters with non-adjacent abilities are handled through the general movement instead of in the attack script
                             {
                                 If ((monsterspecials[List.IndexOf(al, monstermaploc[counter7])] == 1) And List.ContainsItem(1tiler, (counter7 - Playerloc)))
                                 {
@@ -697,7 +699,7 @@ Define Move Enemies (warp=true)
                     }
                 }
             }
-            If (monstermaploc[counter7] == "I")
+            If (monstermaploc[counter7] == "I") //This monster cannot be statused
             {
                 If (Not ((Monstercondition[counter7] == "")))
                 {
@@ -717,7 +719,7 @@ Define Move Enemies (warp=true)
     }
 }
 
-Define Move enemy tile no.(string old) to(string new) (warp=false)
+Define Move enemy tile no.(string old) to(string new) (warp=false) //Translocation of monster from one place to another
 {
     If (((Not ((Operator.LetterOf(maps[floor], new) == 4))) And (Not ((monstermaploc[new] > "")))) And (Not ((new == Playerloc))))
     {
@@ -732,7 +734,7 @@ Define Move enemy tile no.(string old) to(string new) (warp=false)
     }
 }
 
-Define Unequip equipment (warp=false)
+Define Unequip equipment (warp=false) //Final boss attack
 {
     List.Add(textlog, "Your equipment was unequiped!");
     List.ReplaceItem(equipped, List.IndexOf(equipped, "Sword"), 0);
