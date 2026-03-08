@@ -10,31 +10,57 @@ It can feel unfair at first, but that's because you lack knowledge and experienc
 
 By the way, over the passage of time, the term "roguelike" has started to lose its original meaning of procedural dungeon crawling, for a more general term for "games that annoy you", but this game is more similar to Rogue itself, luckily without item identification.)
 Monsters:
+
 Ant (1-2F): Weakling
+
 Hen (1-3F): Weak, but double speed
+
 Onigirighost (3-4F): Drains saturation
+
 Zombie (3-5F): Rots food
+
 Snake (4-6F): Paralysis bite
+
 Vampire (5-8F): HP drain
+
 Firepuff (6-11F): Mini fire breath
+
 Nuancer (7-11F): Morphing breath to 1 item
+
 Bee (8-11F): Strong fatal confusion sting
+
 Leecher (12-15F): Strength drain
+
 Yawner (12-15F): Cause sleep
+
 Will-O-Wisp(12-16F): Drain level
+
 Immunacrab(14-17F,26F): Immediate recovery from status
+
 Cursister (16-21F): Curse and destroy 1 item
+
 Reaper (17-25F): Strong double speed
+
 Tiger (19-25F): Throws you somewhere
+
 Punisher (22-29F): Critical axe swing
+
 Eyeball (23-25F, 27-28F): Confusion glare
+
 Queen (26F): Mid boss
+
 Jolteodon (27-37F): Slow but lightning
+
 Mage (28-36F): Sleep or confusion staff
+
 UFO (31-37F): High defense but low HP
+
 Killer (33-39F): Highest attack power
+
 Xplodetank (34-39F): Ranged cannonball
+
 Dragon (35-40F): Floor-wide fire breath
+
 God (40F): Final boss
 
 5408 blocks
