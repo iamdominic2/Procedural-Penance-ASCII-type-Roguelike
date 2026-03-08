@@ -1,4 +1,4 @@
-[MonsterStats], [MonsterTable], [Items], [ExpTable], [DamageFormula]
+[MonsterStats], [MonsterTable], [Items], [ExpTable], [DMGformula] (Ctrl+F)
 
 [MonsterStats]
 | Ant          | HP | Atk | Def | Ex   | Element (Flying/Ghost) |
@@ -234,3 +234,7 @@
 | 98  | 975000 | 5000  |
 | 99  | 980000 | 19999 |
 | 100 | 999999 |  -    |
+
+[DMGformula]
+It's actually simple: (Atk-Def)*Multiplier (Min 1)*random (0.9,1)
+Multiplier is by powerups (x{1+50%*n}) and super-effective type (x2) and critical (x2)
