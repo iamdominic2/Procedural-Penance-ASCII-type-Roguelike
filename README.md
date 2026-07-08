@@ -1,11 +1,7 @@
 # Procedural Penance (ASCII-type-Roguelike)
 "Real" roguelike that honors the old days of ASCII Rogue and similar games
 
-Playable link:
 https://iamdominic2.itch.io/ascii-type-roguelike-procedural-penance
-
-HTML file link:
-https://drive.google.com/file/d/1fdTElcujDNPx3Xg2j-4ijFOaamDzaEOR/view?usp=sharing
 
 In the code, most of the core logic systems occur in Map&PC, Text, and Enemies.
 
