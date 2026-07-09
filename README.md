@@ -1,7 +1,7 @@
 # Procedural Penance (ASCII-type-Roguelike)
 "Real" roguelike that honors the old days of ASCII Rogue and similar games
 
-https://iamdominic2.itch.io/ascii-type-roguelike-procedural-penance
+**LINK (itch.io): https://iamdominic2.itch.io/ascii-type-roguelike-procedural-penance**
 
 file: https://drive.google.com/file/d/1fdTElcujDNPx3Xg2j-4ijFOaamDzaEOR/view?usp=sharing
 
@@ -12,7 +12,8 @@ In the code, most of the core logic systems occur in Map&PC, Text, and Enemies.
 It can feel unfair at first, but that's because you lack knowledge and experience.The game pushes you in the direction of growing as a player, rather than grinding until you win like a traditional RPG. If you stick with it, you'll find that it's a very rewarding gameplay experience.
 
 By the way, over the passage of time, the term "roguelike" has started to lose its original meaning of procedural dungeon crawling, for a more general term for "games that annoy you", but this game is more similar to Rogue itself, luckily without item identification.)
-Monsters:
+
+# Monsters:
 
 Ant (1-2F): Weakling
 
