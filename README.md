@@ -3,8 +3,6 @@
 
 **LINK (itch.io): https://iamdominic2.itch.io/ascii-type-roguelike-procedural-penance**
 
-file: https://drive.google.com/file/d/1fdTElcujDNPx3Xg2j-4ijFOaamDzaEOR/view?usp=sharing
-
 In the code, most of the core logic systems occur in Map&PC, Text, and Enemies.
 
 1. Tile-based movement and turn-based combat.
