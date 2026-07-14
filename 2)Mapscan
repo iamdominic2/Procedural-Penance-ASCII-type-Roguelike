@@ -1,0 +1,74 @@
+//The thing that scans the pasted things or lines to generate map
+
+//----- Broadcast received events -------------------------------------------------------------------------------------
+
+WhenBroadcastReceived(ScanMap) //Activates scanning
+{
+    List.DeleteAll(map);
+    Call Scan;
+}
+
+
+//----- Custom blocks -------------------------------------------------------------------------------------------------
+
+Define Scan (warp=true) //Prints down walls, coridors, and empty space
+{
+    Looks.Show();
+    Motion.GoToXY(-238, 178);
+    Looks.SetSizeTo(400);
+    Repeat (59)
+    {
+        Motion.SetY(178);
+        Motion.ChangeXBy(8);
+        Repeat (40)
+        {
+            Looks.SetSizeTo(400);
+            Motion.ChangeYBy(-8);
+            If (Sensing.TouchingColour(#0052ff) And (Not (List.ContainsItem(map, 1))))
+            {
+                Looks.SetSizeTo(800);
+                Looks.SetEffectTo(BRIGHTNESS, -100);
+                List.Add(map, 1);
+            }
+            Else
+            {
+                If Sensing.TouchingColour(#000000)
+                {
+                    Looks.SetSizeTo(800);
+                    Looks.SetEffectTo(COLOR, 0);
+                    Looks.SetEffectTo(BRIGHTNESS, -100);
+                    List.Add(map, 2);
+                }
+                Else
+                {
+                    If Sensing.TouchingColour(#e6e6e6)
+                    {
+                        Looks.SetSizeTo(800);
+                        Looks.SetEffectTo(COLOR, 25);
+                        Looks.SetEffectTo(BRIGHTNESS, -100);
+                        List.Add(map, 3);
+                    }
+                    Else
+                    {
+                        Looks.SetSizeTo(400);
+                        List.Add(map, 4);
+                        Looks.SetEffectTo(BRIGHTNESS, -100);
+                    }
+                }
+            }
+        }
+    }
+    List.Add(maps, map);
+    List.DeleteAll(map);
+    Looks.Hide();
+}
+
+
+//----- Costumes ------------------------------------------------------------------------------------------------------
+
+costume1.png
+
+
+//----- Sounds --------------------------------------------------------------------------------------------------------
+
+pop.wav
